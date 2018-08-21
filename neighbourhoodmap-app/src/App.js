@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import SidePanel from './SidePanel.js';
+import Map from './Map.js';
 import './App.css';
 
 class App extends Component {
@@ -7,12 +8,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title"><i class="fas fa-map-signs"></i>Neighbourhood Map</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <body>
+        <SidePanel />
+        <Map />
+        </body>
       </div>
     );
   }
