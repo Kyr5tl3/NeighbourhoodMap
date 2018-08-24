@@ -6,7 +6,7 @@ export class SidePanel extends Component {
   render() {
 
     return (
-      <div> This is the side panel</div>
+      <div id="sidepanel"> This is the side panel</div>
     );
   }
 }

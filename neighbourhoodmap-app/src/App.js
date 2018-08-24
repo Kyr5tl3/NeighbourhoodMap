@@ -21,14 +21,16 @@ export class App extends Component {
   render() {
 
     return (
-      <div className="map">
+      <div id="container">
+      <div id="map">
        <GoogleMap
          bootstrapURLKeys={{ key: 'AIzaSyBMnyIBj3U21kJmlK0PnWg6ZUOq-5OYH2o' }}
          defaultCenter={this.props.center}
          defaultZoom={this.props.zoom}>
        </GoogleMap>
-       <SidePanel />
      </div>
+     <SidePanel />
+   </div>
     );
   }
 }
