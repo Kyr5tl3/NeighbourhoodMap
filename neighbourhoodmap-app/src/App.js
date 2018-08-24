@@ -21,7 +21,7 @@ export class App extends Component {
   render() {
 
     return (
-      <div style={{ height: '500px', width: '500px' }}>
+      <div className="map">
        <GoogleMap
          bootstrapURLKeys={{ key: 'AIzaSyBMnyIBj3U21kJmlK0PnWg6ZUOq-5OYH2o' }}
          defaultCenter={this.props.center}
