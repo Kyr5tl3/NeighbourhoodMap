@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import GoogleMap from 'google-map-react';
+import SidePanel from './SidePanel.js'
 import './App.css';
 
 //https://www.npmjs.com/package/google-map-react
@@ -24,10 +25,9 @@ export class App extends Component {
        <GoogleMap
          bootstrapURLKeys={{ key: 'AIzaSyBMnyIBj3U21kJmlK0PnWg6ZUOq-5OYH2o' }}
          defaultCenter={this.props.center}
-         defaultZoom={this.props.zoom}
-       >
-
+         defaultZoom={this.props.zoom}>
        </GoogleMap>
+       <SidePanel />
      </div>
     );
   }
