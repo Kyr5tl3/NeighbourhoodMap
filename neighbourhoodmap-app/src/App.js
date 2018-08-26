@@ -11,7 +11,7 @@ let longitude = -0.118092;
 
 export class App extends Component {
 
-  static defaultProps = {
+  state = {
       center: {
         lat: latitude,
         lng: longitude
@@ -80,7 +80,7 @@ export class App extends Component {
                   visible: true
               },{
                   title: 'Dulwich Park',
-                  park_id: '5',
+                  park_id: '11',
                   lat: 51.4489961,
                   lng:-0.1487269,
                   visible: true
@@ -90,21 +90,20 @@ export class App extends Component {
 
   render() {
 
-    const {center, zoom, locations} = this.props;
     return (
       <div id="container">
       <div id="map">
        <GoogleMap
          bootstrapURLKeys={{ key: 'AIzaSyBMnyIBj3U21kJmlK0PnWg6ZUOq-5OYH2o' }}
-         defaultCenter={this.props.center}
-         defaultZoom={this.props.zoom}>
-         {locations.map((location) => {
+         defaultCenter={this.state.center}
+         defaultZoom={this.state.zoom}>
+         {this.state.locations.map((location) => {
              return <Marker key={location.park_id} lat={location.lat} lng={location.lng}/>
            })
          }
        </GoogleMap>
      </div>
-     <SidePanel />
+     <SidePanel locations={this.state.locations}/>
    </div>
     );
   }
