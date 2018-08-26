@@ -16,7 +16,7 @@ export class App extends Component {
         lat: latitude,
         lng: longitude
       },
-      zoom: 13,
+      zoom: 12,
       locations: [
               {
                   title: 'Hyde Park',
@@ -54,6 +54,36 @@ export class App extends Component {
                   lat: 51.4791108,
                   lng: -0.1586868,
                   visible: true
+              },{
+                  title: 'Victoria Park',
+                  park_id: '7',
+                  lat: 51.5365647,
+                  lng: -0.0411607,
+                  visible: true
+              },{
+                  title: 'Queen Elizabeth Olympic Park',
+                  park_id: '8',
+                  lat: 51.5311926,
+                  lng: -0.0733877,
+                  visible: true
+              },{
+                  title: 'Crystal Palace Park',
+                  park_id: '9',
+                  lat: 51.4218537,
+                  lng: -0.074574,
+                  visible: true
+              },{
+                  title: 'Clapham Common',
+                  park_id: '10',
+                  lat: 51.4587191,
+                  lng: -0.1517784,
+                  visible: true
+              },{
+                  title: 'Dulwich Park',
+                  park_id: '5',
+                  lat: 51.4489961,
+                  lng:-0.1487269,
+                  visible: true
               }]
 
     };
@@ -69,7 +99,7 @@ export class App extends Component {
          defaultCenter={this.props.center}
          defaultZoom={this.props.zoom}>
          {locations.map((location) => {
-             return <Marker lat={location.lat} lng={location.lng}/>
+             return <Marker key={location.park_id} lat={location.lat} lng={location.lng}/>
            })
          }
        </GoogleMap>
