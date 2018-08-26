@@ -78,3 +78,9 @@
   100%
     {transform: translateY(0) rotate(-45deg);}
 }
+
+.fas{
+  font-family: FontAwesome;
+  font-style: normal;
+  color: #9dc183;
+}
