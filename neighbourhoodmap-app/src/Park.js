@@ -9,7 +9,7 @@ export class Park extends Component {
 
     return (
       <div className="park">
-      <h2><i class="fas fa-tree"></i> {park.title}</h2>
+      <h2><i className="fas fa-tree"></i> {park.title}</h2>
       </div>
     )
   }

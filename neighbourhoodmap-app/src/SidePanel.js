@@ -7,8 +7,6 @@ export class SidePanel extends Component {
 
   render() {
 
-    const {locations} = this.props;
-
     return (
       <div id="sidepanel">
       <h1>London Parks</h1>

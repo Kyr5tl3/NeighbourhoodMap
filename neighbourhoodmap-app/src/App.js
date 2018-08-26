@@ -21,68 +21,79 @@ export class App extends Component {
               {
                   title: 'Hyde Park',
                   park_id: '1',
-                  lat: 51.5072715,
-                  lng: -0.167919,
+                  lat : 51.5072682,
+                  lng : -0.1657303,
+                  cardinal: 'north west',
                   visible: true
               },{
                   title: 'Regents Park',
                   park_id: '2',
-                  lat: 51.5302941,
-                  lng: -0.1520961,
+                  lat: 51.5312705,
+                  lng: -0.1569694,
+                  cardinal: 'north west',
                   visible: true
               },{
                   title: 'Richmond Park',
                   park_id: '3',
-                  lat: 51.4463902,
-                  lng: -0.2779614,
+                  lat: 51.4463869,
+                  lng: -0.2757727,
+                  cardinal: 'south west',
                   visible: true
               },{
                   title: 'Greenwich Park',
                   park_id: '4',
-                  lat: 51.4769128,
-                  lng: -0.0007244,
+                  lat: 51.47691,
+                  lng: 0.001464,
+                  cardinal: 'south east',
                   visible: true
               },{
                   title: 'Hampstead Heath',
                   park_id: '5',
-                  lat: 51.5608454,
-                  lng: -0.1653263,
+                  lat: 51.5608421,
+                  lng: -0.1631376,
+                  cardinal: 'north west',
                   visible: true
               },{
                   title: 'Battersea Park',
                   park_id: '6',
-                  lat: 51.4791108,
-                  lng: -0.1586868,
+                  lat: 51.4791075,
+                  lng: -0.1564981,
+                  cardinal: 'south west',
                   visible: true
               },{
                   title: 'Victoria Park',
                   park_id: '7',
-                  lat: 51.5365647,
-                  lng: -0.0411607,
+                  lat: 51.5365614,
+                  lng: -0.038972,
+                  cardinal: 'north west',
                   visible: true
               },{
                   title: 'Queen Elizabeth Olympic Park',
                   park_id: '8',
-                  lat: 51.5311926,
-                  lng: -0.0733877,
+                  lat: 51.5432961,
+                  lng: -0.0165517,
+                  cardinal: 'north east',
                   visible: true
               },{
                   title: 'Crystal Palace Park',
                   park_id: '9',
-                  lat: 51.4218537,
-                  lng: -0.074574,
+                  lat: 51.4218504,
+                  lng: -0.0723853,
+                  cardinal: 'south east',
                   visible: true
               },{
                   title: 'Clapham Common',
                   park_id: '10',
-                  lat: 51.4587191,
-                  lng: -0.1517784,
+                  lat: 51.4587158,
+                  lng: -0.1495897,
+                  cardinal: 'south west',
                   visible: true
               },{
-                  title: 'Dulwich Park',
+                  title: 'Peckham Rye Park',
                   park_id: '11',
-                  lat: 51.4489961,
-                  lng:-0.1487269,
+                  lat: 51.4595857,
+                  lng: -0.0638687,
+                  cardinal: 'south east',
                   visible: true
               }]
 
@@ -98,7 +109,7 @@ export class App extends Component {
          defaultCenter={this.state.center}
          defaultZoom={this.state.zoom}>
          {this.state.locations.map((location) => {
-             return <Marker key={location.park_id} lat={location.lat} lng={location.lng}/>
+             return <Marker key={location.park_id} lat={location.lat} lng={location.lng} />
            })
          }
        </GoogleMap>
