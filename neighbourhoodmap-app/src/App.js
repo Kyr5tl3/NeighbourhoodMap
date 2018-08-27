@@ -61,7 +61,7 @@ export class App extends Component {
                   cardinal: 'south west',
                   visible: true
               },{
-                  title: 'Victoria Park',
+                  title: 'Vicky Park',
                   park_id: '7',
                   lat: 51.5365614,
                   lng: -0.038972,
@@ -109,12 +109,12 @@ export class App extends Component {
          defaultCenter={this.state.center}
          defaultZoom={this.state.zoom}>
          {this.state.locations.map((location) => {
-             return <Marker key={location.park_id} lat={location.lat} lng={location.lng} />
+             return <Marker key={location.park_id} lat={location.lat} lng={location.lng}  />
            })
          }
        </GoogleMap>
      </div>
-     <SidePanel locations={this.state.locations}/>
+     <SidePanel locations={this.state.locations} />
    </div>
     );
   }

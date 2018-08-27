@@ -12,7 +12,7 @@ export class SidePanel extends Component {
       <h1>London Parks</h1>
       <ul id="parklist">
       {this.props.locations.map((location) => {
-          return <Park park={location} key={location.title} />
+          return <Park park={location} key={location.title} parkName={location.title} parkId={location.park_id} />
         })
       }
       </ul>
