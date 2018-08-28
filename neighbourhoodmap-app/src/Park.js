@@ -23,7 +23,9 @@ export class Park extends Component {
       `${data.query.pages[e].extract}`
   )
   $('.'+parkId).html(extract)
-  })
+}).done(function() {console.log('getJSON request succeeded!'); })
+.fail(function() { alert('getJSON request failed! '); })
+.always(function() { console.log('getJSON request ended!'); });
 }
 
   render(){
