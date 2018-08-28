@@ -11,23 +11,23 @@ export class SidePanel extends Component {
 
   updateList = (park, area) => {
   let selectedArea = park.target.value;
-  this.setState({selectedArea: selectedArea})
+  this.setState({selectedArea:selectedArea});
+  this.props.updateList(selectedArea)
   }
+
+
 
   render() {
 
     return (
       <div id="sidepanel">
       <h1>London Parks</h1>
-      <Filter updateList={this.updateList}/>
+      <Filter updateList={this.updateList} />
       <ul id="parklist">
       {this.props.locations.filter((location) => {
         let area = location.cardinal;
-        console.log(area)
-        let cardinal = this.state.selectedArea
-        console.log(cardinal)
+        let cardinal = this.state.selectedArea;
         if (area.includes(cardinal)){
-          console.log('if works')
           return location
         }
       }).map((location) => {

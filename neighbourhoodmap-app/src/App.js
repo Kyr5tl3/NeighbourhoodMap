@@ -61,11 +61,11 @@ export class App extends Component {
                   cardinal: 'south west',
                   visible: true
               },{
-                  title: 'Vicky Park',
+                  title: 'Victoria Park, London',
                   park_id: '7',
                   lat: 51.5365614,
                   lng: -0.038972,
-                  cardinal: 'north west',
+                  cardinal: 'north east',
                   visible: true
               },{
                   title: 'Queen Elizabeth Olympic Park',
@@ -95,9 +95,14 @@ export class App extends Component {
                   lng: -0.0638687,
                   cardinal: 'south east',
                   visible: true
-              }]
-
+              }],
+        selectedArea: ''
     };
+
+    updatedList = (selectedArea) => {
+    this.setState({selectedArea:selectedArea})
+    console.log('this is selectedArea',selectedArea)
+  }
 
   render() {
 
@@ -108,13 +113,22 @@ export class App extends Component {
          bootstrapURLKeys={{ key: 'AIzaSyBMnyIBj3U21kJmlK0PnWg6ZUOq-5OYH2o' }}
          defaultCenter={this.state.center}
          defaultZoom={this.state.zoom}>
-         {this.state.locations.map((location) => {
+         {this.state.locations.filter((location) => {
+           let area = location.cardinal;
+           console.log(area)
+           let cardinal = this.state.selectedArea
+           console.log(cardinal)
+           if (area.includes(cardinal)){
+             console.log('if works')
+             return location
+           }
+         }).map((location) => {
              return <Marker key={location.park_id} lat={location.lat} lng={location.lng}  />
            })
          }
        </GoogleMap>
      </div>
-     <SidePanel locations={this.state.locations} />
+     <SidePanel locations={this.state.locations} updateList={this.updatedList} />
    </div>
     );
   }
