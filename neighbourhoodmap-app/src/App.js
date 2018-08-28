@@ -104,6 +104,10 @@ export class App extends Component {
     console.log('this is selectedArea',selectedArea)
   }
 
+  onMarkerClick = (event) => {
+    console.log(this.title)
+  }
+
   render() {
 
     return (
@@ -123,7 +127,7 @@ export class App extends Component {
              return location
            }
          }).map((location) => {
-             return <Marker key={location.park_id} lat={location.lat} lng={location.lng}  />
+             return <Marker key={location.park_id} lat={location.lat} lng={location.lng} onClick={() => {console.log('this marker was clicked')}} />
            })
          }
        </GoogleMap>
