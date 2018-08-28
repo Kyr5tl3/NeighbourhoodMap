@@ -8,22 +8,23 @@ export class Park extends Component {
     this.wikiData();
   }
 
-  // let parkName = 'this park'
-
+  // summary of parks from Wikipedia
   wikiData(){
     let park = this.props;
-    // let parkName = parkNameWithSpaces.replace(/\s/g,"%20");
-    let parkName = park.parkName;
+    // let city = ' england';
+    let thisPark = park.parkName;
+    let parkName = thisPark;
     let parkId = park.parkId;
-    console.log(parkId);
-    let url = 'http://en.wikipedia.org/w/api.php?action=parse&page=' + parkName + '&summary&format=json&callback=?'
-    console.log(url);
-    $.getJSON(url, function(json) {
-      $('.'+parkName).html(json.parse.text['*'])
-      $('.'+parkName).find("a:not(.references a)").attr("href", function(){ return "http://www.wikipedia.org" + $(this).attr("href");});
-      $('.'+parkName).find("a").attr("target", "_blank");
-  });
-  }
+
+    $.getJSON("https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&callback=?", {
+    titles: parkName,
+  }, function(data) {
+    let extract = Object.keys(data.query.pages).map(e =>
+      `${data.query.pages[e].extract}`
+  )
+  $('.'+parkId).html(extract)
+  })
+}
 
   render(){
 
@@ -32,7 +33,7 @@ export class Park extends Component {
     return (
       <li className="park">
       <h2><i className="fas fa-tree"></i>{park.title}</h2>
-      <div className={park.title}></div>
+      <div className={park.park_id}></div>
       </li>
     )
   }

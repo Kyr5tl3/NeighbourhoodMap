@@ -19,14 +19,14 @@ export class App extends Component {
       zoom: 12,
       locations: [
               {
-                  title: 'Hyde Park',
+                  title: 'Hyde Park, London',
                   park_id: '1',
                   lat : 51.5072682,
                   lng : -0.1657303,
                   cardinal: 'north west',
                   visible: true
               },{
-                  title: 'Regents Park',
+                  title: 'Regent\'s Park',
                   park_id: '2',
                   lat: 51.5312705,
                   lng: -0.1569694,
