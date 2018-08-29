@@ -97,7 +97,7 @@ export class App extends Component {
 
   onMarkerClick = (marker, markerid) => {
     $('.'+markerid).toggle()
-    $('.markerDetails '+markerid).toggle()
+    $('.marker'+markerid).toggle()
   }
 
   render() {
@@ -119,7 +119,7 @@ export class App extends Component {
              return location
            }
          }).map((location) => {
-             return <Marker key={location.park_id} markerid={location.park_id} location={location.title} lat={location.lat} lng={location.lng} onClick={this.onMarkerClick} />
+             return <Marker key={location.park_id} markerid={location.park_id} park={location} lat={location.lat} lng={location.lng} onClick={this.onMarkerClick} />
            })
          }
        </GoogleMap>
