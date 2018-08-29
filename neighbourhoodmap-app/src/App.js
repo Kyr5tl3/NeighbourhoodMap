@@ -5,17 +5,14 @@ import Marker from './Marker.js'
 import $ from 'jquery';
 import './App.css';
 
-//https://www.npmjs.com/package/google-map-react
-
-let latitude = 51.509865;
-let longitude = -0.118092;
+//https://www.npmjs.com/package/google-map-react used to build 
 
 export class App extends Component {
 
   state = {
       center: {
-        lat: latitude,
-        lng: longitude
+        lat: 51.509865,
+        lng: -0.118092
       },
       zoom: 12,
       locations: [
@@ -89,12 +86,13 @@ export class App extends Component {
         selectedArea: ''
     };
 
+//update state to show parks in cardinal area
     updatedList = (selectedArea) => {
     this.setState({selectedArea:selectedArea})
     console.log('this is selectedArea',selectedArea)
   }
 
-
+// toggle the park name on map and the wiki information in the sidepanel when clicking on map marker
   onMarkerClick = (marker, markerid) => {
     $('.'+markerid).toggle()
     $('.marker'+markerid).toggle()

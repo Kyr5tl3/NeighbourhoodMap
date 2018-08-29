@@ -9,6 +9,7 @@ export class SidePanel extends Component {
     selectedArea: ''
   }
 
+//update state to show parks in cardinal area
   updateList = (park, area) => {
   let selectedArea = park.target.value;
   this.setState({selectedArea:selectedArea});

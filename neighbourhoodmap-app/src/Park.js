@@ -8,7 +8,7 @@ export class Park extends Component {
     this.wikiData();
   }
 
-  // summary of parks from Wikipedia
+  // obtain summary of parks from Wikipedia & append to relevant park in side panel
   wikiData(){
     let park = this.props;
     // let city = ' england';
