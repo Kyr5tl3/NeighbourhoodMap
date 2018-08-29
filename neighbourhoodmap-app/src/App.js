@@ -104,7 +104,7 @@ export class App extends Component {
 
     return (
       <div id="container">
-      <div id="map" aria-hidden={true} tabindex="-1" aria-labelledby="map">
+      <div id="map" aria-hidden={true} tab-index="-1" aria-labelledby="map">
        <GoogleMap alt=""
          bootstrapURLKeys={{ key: 'AIzaSyBMnyIBj3U21kJmlK0PnWg6ZUOq-5OYH2o' }}
          defaultCenter={this.state.center}

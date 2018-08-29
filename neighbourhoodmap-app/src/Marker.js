@@ -8,9 +8,9 @@ export class Marker extends Component {
     const {park} = this.props;
 
     return(
-      <div aria-hidden="true" tabindex="-1">
-      <div aria-hidden="true" tabindex="-1" aria-labelledby="markerDetails" className={"markerDetails marker"+this.props.markerid}>{park.title}</div>
-      <div aria-hidden="true" tabindex="-1" aria-labelledby="marker" className="marker" markerid={this.props.markerid} onClick={()=> this.props.onClick(this.props.location, this.props.markerid)} >
+      <div aria-hidden="true" tab-index="-1">
+      <div aria-hidden="true" tab-index="-1" aria-labelledby="markerDetails" className={"markerDetails marker"+this.props.markerid}>{park.title}</div>
+      <div aria-hidden="true" tab-index="-1" aria-labelledby="marker" className="marker" markerid={this.props.markerid} onClick={()=> this.props.onClick(this.props.location, this.props.markerid)} >
       </div>
       </div>
     )
