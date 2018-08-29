@@ -117,7 +117,7 @@ export class App extends Component {
            if (area.includes(cardinal)){
              console.log('if works')
              return location
-           }
+           } else {return null}
          }).map((location) => {
              return <Marker key={location.park_id} markerid={location.park_id} park={location} lat={location.lat} lng={location.lng} onClick={this.onMarkerClick} />
            })

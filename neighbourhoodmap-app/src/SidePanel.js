@@ -27,7 +27,7 @@ export class SidePanel extends Component {
         let cardinal = this.state.selectedArea;
         if (area.includes(cardinal)){
           return location
-        }
+        } else {return null}
       }).map((location) => {
           return <Park park={location} key={location.title} parkName={location.title} parkId={location.park_id} />
         })
