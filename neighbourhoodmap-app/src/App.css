@@ -83,4 +83,13 @@
   font-family: FontAwesome;
   font-style: normal;
   color: #9dc183;
+  margin-right: 10px;
+}
+
+.wikiInfo{
+  display: none;
+}
+
+li{
+  list-style: none;
 }

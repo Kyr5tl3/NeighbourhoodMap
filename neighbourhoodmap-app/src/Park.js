@@ -15,7 +15,6 @@ export class Park extends Component {
     let thisPark = park.parkName;
     let parkName = thisPark;
     let parkId = park.parkId;
-
     $.getJSON("https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&callback=?", {
     titles: parkName,
   }, function(data) {
@@ -35,7 +34,7 @@ export class Park extends Component {
     return (
       <li className="park">
       <h2><i className="fas fa-tree"></i>{park.title}</h2>
-      <div className={park.park_id}></div>
+      <div className={park.park_id +' wikiInfo'}></div>
       </li>
     )
   }
