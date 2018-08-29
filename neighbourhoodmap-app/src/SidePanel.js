@@ -15,8 +15,6 @@ export class SidePanel extends Component {
   this.props.updateList(selectedArea)
   }
 
-
-
   render() {
 
     return (

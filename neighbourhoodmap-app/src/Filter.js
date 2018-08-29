@@ -8,13 +8,13 @@ export class Filter extends Component {
 
     return(
       <div className="filter">
-        <select onChange={this.props.updateList}>
-          <option value="Area" disabled="disabled">Select area...</option>
-          <option value="">All</option>
-          <option value="north">North</option>
-          <option value="south">South</option>
-          <option value="east">East</option>
-          <option value="west">West</option>
+        <select onChange={this.props.updateList} aria-haspopup="listbox" aria-label="filter London parks">
+          <option value="Area" role="listbox" disabled="disabled" aria-label="Select area">Select area...</option>
+          <option value="" role="listbox" aria-label="All Parks">All</option>
+          <option value="north" role="listbox" aria-label="Northern Parks">North</option>
+          <option value="south" role="listbox" aria-label="Sputhern Parks">South</option>
+          <option value="east" role="listbox" aria-label="Eastern Parks">East</option>
+          <option value="west" role="listbox" aria-label="Western Parks">West</option>
         </select>
       </div>
     )
