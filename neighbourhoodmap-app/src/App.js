@@ -105,6 +105,9 @@ export class App extends Component {
       $('.popup:visible').find('.marker').css({'background-color':'#f05d5d'})
     }
 
+    gm_authFailure(){
+      console.log("Google Maps API Authentication Error")
+     };
 
   render() {
 
