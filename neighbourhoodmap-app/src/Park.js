@@ -23,7 +23,7 @@ export class Park extends Component {
   )
   $('.'+parkId).html(extract)
 }).done(function() {console.log('getJSON request succeeded!'); })
-.fail(function() { alert('getJSON request failed! '); })
+.fail(function() {alert('getJSON request failed! '); })
 .always(function() { console.log('getJSON request ended!'); });
 }
 
@@ -32,7 +32,7 @@ export class Park extends Component {
     const {park} = this.props;
 
     return (
-      <li className="park">
+      <li tab-index="0" className="park" onClick = {() => this.props.onClick(this.props.parkName, this.props.parkId)}>
       <h3 tab-index="0" area-label={park.title} ><i className="fas fa-tree"></i>{park.title}</h3>
       <div className={park.park_id +' wikiInfo'}></div>
       </li>

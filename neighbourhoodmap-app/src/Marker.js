@@ -15,7 +15,7 @@ export class Marker extends Component {
       <p className="minorDetails">Longitude: {park.lat}</p>
       </div>
       </div>
-      <div aria-hidden="true" tab-index="-1" aria-labelledby="marker" className="marker" markerid={this.props.markerid} onClick={()=> this.props.onClick(this.props.location, this.props.markerid)} >
+      <div aria-hidden="true" tab-index="-1" aria-labelledby="marker" className="marker" markerid={this.props.markerid}>
       </div>
       </div>
     )
