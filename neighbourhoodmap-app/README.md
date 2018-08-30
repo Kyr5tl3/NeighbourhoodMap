@@ -10,6 +10,8 @@ It was created using the React framework and was bootstrapped with [Create React
 
   This will open in localhost http://localhost:3000/
 
+  To view in production, run npm build.
+
 ## Key Files
 CSS
  - App.css: all styles located here

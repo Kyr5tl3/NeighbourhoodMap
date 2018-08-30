@@ -34,6 +34,7 @@ export class SidePanel extends Component {
         })
       }
       </ul>
+      <div className="reference">***Summary information obtained from Wikipedia en.wikipedia.org</div>
       </div>
     );
   }
