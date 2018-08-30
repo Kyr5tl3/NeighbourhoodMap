@@ -94,6 +94,17 @@ export class App extends Component {
     console.log('this is selectedArea',selectedArea)
   }
 
+  // toggle the park name on map and the wiki information in the sidepanel when clicking on map marker
+    onMarkerClick = (marker, markerid) => {
+      $('.popup').hide()
+      $('.highlighted').toggleClass('highlighted', 'remove')
+      $('.wikiInfo').hide()
+      $('.'+markerid).toggle()
+      $('div[markerid='+markerid+']').toggleClass('highlighted')
+      $('.marker'+markerid).toggle()
+      $('.popup:visible').find('.marker').css({'background-color':'#f05d5d'})
+    }
+
 
   render() {
 
@@ -114,7 +125,7 @@ export class App extends Component {
              return location
            } else {return null}
          }).map((location) => {
-             return <Marker key={location.park_id} markerid={location.park_id} park={location} lat={location.lat} lng={location.lng} />
+             return <Marker key={location.park_id} markerid={location.park_id} park={location} lat={location.lat} lng={location.lng} onClick={this.onMarkerClick}/>
            })
          }
        </GoogleMap>
