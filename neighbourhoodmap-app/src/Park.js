@@ -33,7 +33,7 @@ export class Park extends Component {
 
     return (
       <li className="park">
-      <h3><i className="fas fa-tree"></i>{park.title}</h3>
+      <h3 tab-index="0" area-label={park.title} ><i className="fas fa-tree"></i>{park.title}</h3>
       <div className={park.park_id +' wikiInfo'}></div>
       </li>
     )

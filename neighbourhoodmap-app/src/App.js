@@ -6,13 +6,15 @@ import $ from 'jquery';
 import './App.css';
 
 //https://www.npmjs.com/package/google-map-react used to build
+let latitude = 51.509865;
+let longitude = -0.118092;
 
 export class App extends Component {
 
   state = {
       center: {
-        lat: 51.509865,
-        lng: -0.118092
+        lat: latitude,
+        lng: longitude
       },
       zoom: 12,
       locations: [
