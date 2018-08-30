@@ -9,7 +9,12 @@ export class Marker extends Component {
 
     return(
       <div aria-hidden="true" tab-index="-1">
-      <div aria-hidden="true" tab-index="-1" aria-labelledby="markerDetails" className={"markerDetails marker"+this.props.markerid}>{park.title}</div>
+      <div className={"popup marker"+this.props.markerid}>
+      <div aria-hidden="true" tab-index="-1" aria-labelledby="markerDetails" className="markerDetails">{park.title}
+      <p className="minorDetails">Latitude: {park.lat}</p>
+      <p className="minorDetails">Longitude: {park.lat}</p>
+      </div>
+      </div>
       <div aria-hidden="true" tab-index="-1" aria-labelledby="marker" className="marker" markerid={this.props.markerid} onClick={()=> this.props.onClick(this.props.location, this.props.markerid)} >
       </div>
       </div>

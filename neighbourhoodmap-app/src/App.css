@@ -83,21 +83,27 @@ select, option{
   cursor: pointer;
 }
 
-.marker:focus{
+.highlighted{
   background: #f05d5d;
 }
 
 .markerDetails{
-  display: none;
   font-size: 16px;
   margin: 10px;
   font-weight: bold;
-  width: 250px;
+  background-color: #D3D3D3;
+  border-radius: 5px;
+  width: 200px;
+  height: 100%;
+  text-align: center;
+  padding: 5px;
 }
 
-.markerDetails::selection{
-  display: block;
+.minorDetails{
+  font-size: 12px;
+  font-weight: normal;
 }
+
 
 .fas{
     font-family: FontAwesome;
@@ -122,7 +128,9 @@ select, option{
   color: #D3D3D3;
 }
 
-
+.popup{
+  display: none;
+}
 
 @keyframes bounce {
   0%

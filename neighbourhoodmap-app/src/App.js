@@ -5,7 +5,7 @@ import Marker from './Marker.js'
 import $ from 'jquery';
 import './App.css';
 
-//https://www.npmjs.com/package/google-map-react used to build 
+//https://www.npmjs.com/package/google-map-react used to build
 
 export class App extends Component {
 
@@ -94,8 +94,13 @@ export class App extends Component {
 
 // toggle the park name on map and the wiki information in the sidepanel when clicking on map marker
   onMarkerClick = (marker, markerid) => {
+    $('.popup').hide()
+    $('.highlighted').toggleClass('highlighted', 'remove')
+    $('.wikiInfo').hide()
     $('.'+markerid).toggle()
+    $('div[markerid='+markerid+']').toggleClass('highlighted')
     $('.marker'+markerid).toggle()
+    $('.popup:visible').find('.marker').css({'background-color':'#f05d5d'})
   }
 
   render() {
