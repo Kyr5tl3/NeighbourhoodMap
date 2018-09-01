@@ -105,12 +105,14 @@ export class App extends Component {
       $('.popup:visible').find('.marker').css({'background-color':'#f05d5d'})
     }
 
-    gm_authFailure(){
-      console.log("Google Maps API Authentication Error")
-     };
+    componentDidMount(){
+      window.gm_authFailure = function() {
+      if (window.confirm("The map will not load as the API key has not been found or is incorrect. Click OK to be redirected to instructions on how to obtain an API key"))
+    {window.location.href='https://developers.google.com/maps/documentation/javascript/get-api-key'};
+  };
+}
 
   render() {
-
     return (
       <div id="container">
       <div id="map" aria-hidden={true} tab-index="-1" aria-labelledby="map">
